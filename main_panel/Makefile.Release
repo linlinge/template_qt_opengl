@@ -17,7 +17,7 @@ CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:strictStrings -Zc:throwingNew -O2 -M
 INCPATH       = -I. -ID:\Qt\Qt5.8.0\5.8\msvc2015_64\include -ID:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets -ID:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui -ID:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE -ID:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore -Irelease -I. -ID:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\win32-msvc2015 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib\qtmain.lib /LIBPATH:C:\utils\my_sql\my_sql\lib /LIBPATH:C:\utils\postgresql\pgsql\lib shell32.lib D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib\Qt5Widgets.lib D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib\Qt5Gui.lib D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib\Qt5Core.lib 
+LIBS          = /LIBPATH:D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib\qtmain.lib /LIBPATH:C:\utils\my_sql\my_sql\lib /LIBPATH:C:\utils\postgresql\pgsql\lib shell32.lib opengl32.lib glu32.lib D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib\Qt5Widgets.lib D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib\Qt5Gui.lib D:\Qt\Qt5.8.0\5.8\msvc2015_64\lib\Qt5Core.lib 
 QMAKE         = D:\Qt\Qt5.8.0\5.8\msvc2015_64\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -259,15 +259,46 @@ release\moc_mainwindow.cpp: D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QMai
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtabwidget.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qicon.h \
 		formgraph.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidget \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglwindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDeviceWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevicewindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QObject \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QEvent \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QMargins \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QRect \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurface.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurfaceformat.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDevice \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLContext \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglcontext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QScopedPointer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QSurfaceFormat \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengl.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qt_windows.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\KHR\khrplatform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengles2ext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglversionfunctions.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QImage \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLFunctions \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglfunctions.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QTimer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qtimer.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qbasictimer.h \
 		mainwindow.h \
 		release\moc_predefs.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\bin\moc.exe
 	D:\Qt\Qt5.8.0\5.8\msvc2015_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include release/moc_predefs.h -ID:/Qt/Qt5.8.0/5.8/msvc2015_64/mkspecs/win32-msvc2015 -IE:/workspace/PCLab/PCLab/main_panel -ID:/Qt/Qt5.8.0/5.8/msvc2015_64/include -ID:/Qt/Qt5.8.0/5.8/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.8.0/5.8/msvc2015_64/include/QtGui -ID:/Qt/Qt5.8.0/5.8/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.8.0/5.8/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" mainwindow.h -o release\moc_mainwindow.cpp
 
-release\moc_formgraph.cpp: D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidget \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qwidget.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtwidgetsglobal.h \
+release\moc_formgraph.cpp: D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglwindow.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtguiglobal.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qglobal.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qconfig-bootstrapped.h \
@@ -292,13 +323,15 @@ release\moc_formgraph.cpp: D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidg
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qnumeric.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qversiontagging.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtgui-config.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtwidgets-config.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindowdefs.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDeviceWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevicewindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QObject \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobject.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobjectdefs.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qnamespace.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindowdefs_win.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobject.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qstring.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qchar.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qbytearray.h \
@@ -320,39 +353,54 @@ release\moc_formgraph.cpp: D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidg
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qvarlengtharray.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qcontainerfwd.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobject_impl.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QEvent \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QMargins \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qmargins.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevice.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QRect \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qrect.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qsize.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qpoint.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpalette.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurface.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurfaceformat.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindowdefs.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindowdefs_win.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qicon.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpixmap.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevice.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qcolor.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qrgb.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qrgba64.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qbrush.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qvector.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qmatrix.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpolygon.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qregion.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qdatastream.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qiodevice.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qline.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtransform.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpainterpath.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qimage.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpixelformat.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpixmap.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qsharedpointer.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qshareddata.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qhash.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfont.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfontmetrics.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfontinfo.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qsizepolicy.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qimage.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpixelformat.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtransform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qmatrix.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpolygon.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qvector.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qregion.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qdatastream.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qiodevice.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qline.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpainterpath.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qcursor.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qkeysequence.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qevent.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDevice \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLContext \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglcontext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QScopedPointer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QSurfaceFormat \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengl.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qt_windows.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\KHR\khrplatform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengles2ext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglversionfunctions.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qvariant.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qmap.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qdebug.h \
@@ -360,12 +408,12 @@ release\moc_formgraph.cpp: D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidg
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qlocale.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qset.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qcontiguouscache.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qurl.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qurlquery.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qfile.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qfiledevice.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qvector2d.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtouchdevice.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QImage \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLFunctions \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglfunctions.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QTimer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qtimer.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qbasictimer.h \
 		formgraph.h \
 		release\moc_predefs.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\bin\moc.exe
@@ -502,7 +550,39 @@ release\main.obj: main.cpp mainwindow.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtabwidget.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qicon.h \
 		formgraph.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidget \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglwindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDeviceWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevicewindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QObject \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QEvent \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QMargins \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QRect \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurface.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurfaceformat.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDevice \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLContext \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglcontext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QScopedPointer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QSurfaceFormat \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengl.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qt_windows.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\KHR\khrplatform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengles2ext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglversionfunctions.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QImage \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLFunctions \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglfunctions.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QTimer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qtimer.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qbasictimer.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QApplication \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qapplication.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qcoreapplication.h \
@@ -617,7 +697,39 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtabwidget.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qicon.h \
 		formgraph.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidget \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglwindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDeviceWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevicewindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QObject \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QEvent \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QMargins \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QRect \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurface.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurfaceformat.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDevice \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLContext \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglcontext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QScopedPointer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QSurfaceFormat \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengl.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qt_windows.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\KHR\khrplatform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengles2ext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglversionfunctions.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QImage \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLFunctions \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglfunctions.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QTimer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qtimer.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qbasictimer.h \
 		ui_mainwindow.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QVariant \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QAction \
@@ -661,12 +773,12 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QStatusBar \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qstatusbar.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QToolBar \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtoolbar.h
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtoolbar.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidget
 
 release\formgraph.obj: formgraph.cpp formgraph.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidget \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qwidget.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtwidgetsglobal.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglwindow.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtguiglobal.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qglobal.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qconfig-bootstrapped.h \
@@ -691,13 +803,15 @@ release\formgraph.obj: formgraph.cpp formgraph.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qnumeric.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qversiontagging.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtgui-config.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtwidgets-config.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindowdefs.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDeviceWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevicewindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QWindow \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindow.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QObject \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobject.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobjectdefs.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qnamespace.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobjectdefs_impl.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindowdefs_win.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobject.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qstring.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qchar.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qbytearray.h \
@@ -719,39 +833,54 @@ release\formgraph.obj: formgraph.cpp formgraph.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qvarlengtharray.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qcontainerfwd.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qobject_impl.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QEvent \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QMargins \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qmargins.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevice.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QRect \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qrect.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qsize.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qpoint.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpalette.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurface.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qsurfaceformat.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindowdefs.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qwindowdefs_win.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qicon.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpixmap.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpaintdevice.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qcolor.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qrgb.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qrgba64.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qbrush.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qvector.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qmatrix.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpolygon.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qregion.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qdatastream.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qiodevice.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qline.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtransform.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpainterpath.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qimage.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpixelformat.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpixmap.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qsharedpointer.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qshareddata.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qhash.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfont.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfontmetrics.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfontinfo.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qsizepolicy.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qimage.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpixelformat.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtransform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qmatrix.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpolygon.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qvector.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qregion.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qdatastream.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qiodevice.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qline.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpainterpath.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qcursor.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qkeysequence.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qevent.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QPaintDevice \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLContext \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglcontext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QScopedPointer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QSurfaceFormat \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengl.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qt_windows.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES3\gl3platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\KHR\khrplatform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtANGLE\GLES2\gl2platform.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopengles2ext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglext.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglversionfunctions.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qvariant.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qmap.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qdebug.h \
@@ -759,17 +888,33 @@ release\formgraph.obj: formgraph.cpp formgraph.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qlocale.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qset.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qcontiguouscache.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QImage \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\QOpenGLFunctions \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qopenglfunctions.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QTimer \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qtimer.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qbasictimer.h \
+		ui_formgraph.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QVariant \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QAction \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qaction.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtwidgetsglobal.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtwidgets-config.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qkeysequence.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qwidget.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qpalette.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qbrush.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfont.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfontmetrics.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qfontinfo.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qsizepolicy.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qevent.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qurl.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qurlquery.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qfile.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\qfiledevice.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qvector2d.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qtouchdevice.h \
-		ui_formgraph.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtCore\QVariant \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QAction \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qaction.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtGui\qicon.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qactiongroup.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QApplication \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qapplication.h \
@@ -797,7 +942,8 @@ release\formgraph.obj: formgraph.cpp formgraph.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qstyle.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtabbar.h \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qrubberband.h
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\qrubberband.h \
+		D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtWidgets\QWidget
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 

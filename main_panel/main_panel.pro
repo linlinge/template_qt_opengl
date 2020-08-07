@@ -35,3 +35,6 @@ HEADERS += \
 FORMS += \
         mainwindow.ui \
     formgraph.ui
+
+LIBS += -lopengl32\
+        -lglu32
